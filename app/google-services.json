@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "778498158124",
+    "project_id": "payrouterecharge",
+    "storage_bucket": "payrouterecharge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778498158124:android:ebae11432e56bb646feb89",
+        "android_client_info": {
+          "package_name": "com.mrmulti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778498158124-vmadt61fug6gf6q95q6gshjh8nksgne0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy18g4z-5Lw6Vqpt7XoG7mfq-IruMVtb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778498158124-vmadt61fug6gf6q95q6gshjh8nksgne0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

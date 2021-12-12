@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:id="@+id/formContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:elevation="10dp"
+                android:visibility="visible"
+                card_view:cardCornerRadius="10dp">
+                <RelativeLayout
+                    android:id="@+id/mainContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/toolbar"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:padding="5dp">
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:id="@+id/rr"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:background="@color/white"
+                                android:visibility="gone"
+                                android:id="@+id/bannerlayout"
+                                android:layout_above="@+id/title"
+                                android:layout_height="@dimen/_130sdp">
+
+                                <androidx.viewpager.widget.ViewPager
+                                     android:id="@+id/pager"
+                                    android:layout_width="match_parent"
+                                    android:background="@drawable/default_image"
+                                    android:layout_height="@dimen/_130sdp">
+                                </androidx.viewpager.widget.ViewPager>
+
+                                <LinearLayout android:id="@+id/image_count"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center"
+                                    android:background="#00000000"
+                                    android:layout_alignParentBottom="true" />
+
+                            </RelativeLayout>
+                            <TextView
+                                android:id="@+id/title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="new Text"
+                                android:textSize="16sp"
+                                android:visibility="gone" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/bannerlayout">
+                             <ScrollView
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content">
+                                 <RelativeLayout
+                                     android:id="@+id/container"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:layout_alignParentTop="true">
+
+                                     <LinearLayout
+                                         android:id="@+id/rechargeType"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:gravity="center"
+                                         android:orientation="horizontal"
+                                         android:weightSum="2">
+
+                                         <RelativeLayout
+                                             android:id="@+id/prepaidSelLayout"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:layout_weight="1">
+
+                                             <RadioButton
+                                                 android:id="@+id/prepaidRadio"
+                                                 android:layout_width="wrap_content"
+                                                 android:layout_height="wrap_content"
+                                                 android:layout_alignBottom="@+id/prepaidLabel"
+                                                 android:layout_alignTop="@+id/prepaidLabel"
+                                                 android:layout_centerVertical="true"
+                                                 android:checked="true" />
+
+                                             <TextView
+                                                 android:id="@+id/prepaidLabel"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:layout_centerVertical="true"
+                                                 android:layout_toRightOf="@+id/prepaidRadio"
+                                                 android:text="Prepaid"
+                                                 android:textColor="@color/black"
+                                                 android:textSize="@dimen/edit_text_size" />
+                                         </RelativeLayout>
+
+                                         <RelativeLayout
+                                             android:id="@+id/postpaidSelLayout"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:layout_weight="1">
+
+                                             <RadioButton
+                                                 android:id="@+id/postpaidRadio"
+                                                 android:layout_width="wrap_content"
+                                                 android:layout_height="wrap_content"
+                                                 android:layout_alignBottom="@+id/postpaidLabel"
+                                                 android:layout_alignTop="@+id/postpaidLabel"
+                                                 android:layout_centerVertical="true"
+                                                 android:checked="false" />
+
+                                             <TextView
+                                                 android:id="@+id/postpaidLabel"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content"
+                                                 android:layout_centerVertical="true"
+                                                 android:layout_toRightOf="@+id/postpaidRadio"
+                                                 android:text="Postpaid"
+                                                 android:textColor="@color/black"
+                                                 android:textSize="@dimen/edit_text_size" />
+                                         </RelativeLayout>
+                                     </LinearLayout>
+
+                                     <EditText
+                                         android:id="@+id/stdCode"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentLeft="true"
+                                         android:layout_below="@+id/rechargeType"
+                                         android:drawableLeft="@drawable/ic_mobile_icon"
+                                         android:gravity="center_vertical"
+                                         android:hint="Std Code"
+                                         android:inputType="phone"
+                                         android:maxLength="10"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size"
+                                         android:visibility="gone" />
+
+                                     <TextView
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:textColor="@color/red"
+                                         android:text="Please wait...Fetching ROffers..."
+                                         android:layout_below="@+id/number"
+                                         android:layout_marginLeft="10dp"
+                                         android:id="@+id/tv_roffers"
+                                         android:visibility="gone"/>
+
+                                     <EditText
+                                         android:id="@+id/bankFund"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentRight="true"
+                                         android:layout_below="@+id/rechargeType"
+                                         android:layout_toRightOf="@+id/stdCode"
+                                         android:drawableLeft="@drawable/ic_currency_icon"
+                                         android:ellipsize="end"
+                                         android:focusable="false"
+                                         android:gravity="center_vertical"
+                                         android:hint="Select Bank"
+                                         android:singleLine="true"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size"
+                                         android:visibility="gone" />
+
+                                     <EditText
+                                         android:id="@+id/number"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_below="@+id/bankFund"
+                                         android:layout_toLeftOf="@+id/importContactLayout"
+                                         android:layout_toRightOf="@+id/stdCode"
+                                         android:drawableLeft="@drawable/ic_mobile_icon"
+                                         android:ellipsize="end"
+                                         android:gravity="center_vertical"
+                                         android:hint="Mobile Number"
+                                         android:inputType="number"
+                                         android:singleLine="true"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size" />
+
+                                     <RelativeLayout
+                                         android:id="@+id/thumbnailContainer"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignBottom="@+id/number"
+                                         android:layout_alignParentRight="true"
+                                         android:layout_alignTop="@+id/number"
+                                         android:layout_below="@+id/bankFund">
+
+                                         <ImageView
+                                             android:id="@+id/thumbnail"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:layout_centerVertical="true"
+                                             android:background="@drawable/ic_info_icon"
+                                             android:padding="15dp"
+                                             android:scaleType="fitXY"
+                                             android:visibility="gone" />
+                                     </RelativeLayout>
+
+                                     <RelativeLayout
+                                         android:id="@+id/importContactLayout"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignBottom="@+id/number"
+                                         android:layout_alignTop="@+id/number"
+                                         android:layout_below="@+id/bankFund"
+                                         android:layout_toLeftOf="@+id/thumbnailContainer"
+                                         android:visibility="visible">
+
+                                         <ImageView
+                                             android:id="@+id/importContact"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:layout_centerVertical="true"
+                                             android:background="@drawable/ic_import_contacts_icon"
+                                             android:padding="15dp"
+                                             android:scaleType="fitXY"
+                                             android:visibility="visible" />
+                                     </RelativeLayout>
+
+                                     <RelativeLayout
+                                         android:id="@+id/opImgContainer"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignBottom="@+id/operator"
+                                         android:layout_alignTop="@+id/operator"
+                                         android:layout_below="@+id/number"
+                                         android:visibility="visible">
+
+                                         <ImageView
+                                             android:id="@+id/opImgLeft"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:layout_alignParentLeft="true"
+                                             android:layout_centerVertical="true"
+                                             android:layout_marginLeft="5dp"
+                                             android:background="@drawable/ic_network_icon" />
+
+                                         <ImageView
+                                             android:id="@+id/opImg"
+                                             android:layout_width="50dp"
+                                             android:layout_height="25dp"
+                                             android:layout_alignParentLeft="true"
+                                             android:layout_centerVertical="true"
+                                             android:layout_marginBottom="5dp"
+                                             android:layout_marginTop="5dp"
+                                             android:visibility="gone" />
+                                     </RelativeLayout>
+
+                                     <EditText
+                                         android:id="@+id/operator"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_below="@+id/number"
+                                         android:layout_marginTop="5dp"
+                                         android:layout_toLeftOf="@+id/ll_plan"
+                                         android:layout_toRightOf="@+id/opImgContainer"
+                                         android:ellipsize="end"
+                                         android:focusable="false"
+                                         android:gravity="center_vertical"
+                                         android:hint="Operator"
+                                         android:singleLine="true"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size" />
+                                     <TextView
+                                         android:id="@+id/circle"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_marginBottom="5dp"
+                                         android:layout_below="@+id/operator"
+                                         android:layout_toLeftOf="@+id/ll_plan"
+                                         android:layout_toRightOf="@+id/opImgContainer"
+                                         android:ellipsize="end"  android:visibility="gone"
+                                         android:focusable="false"
+                                         android:singleLine="true"
+                                         android:text="Circle" />
+                                     <LinearLayout
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:orientation="vertical"
+                                         android:id="@+id/ll_plan"
+                                         android:layout_alignParentRight="true"
+                                         android:layout_below="@+id/number"
+                                         android:layout_alignTop="@+id/operator"
+                                         android:layout_alignBottom="@+id/operator">
+
+                                         <androidx.appcompat.widget.AppCompatTextView
+                                             android:id="@+id/browsePlanButton"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:gravity="center_vertical"
+                                             android:text="Browse Plan"
+                                             android:textColor="@color/colorlink"
+                                             android:textSize="14sp"
+                                             android:padding="2dp"/>
+
+                                         <androidx.appcompat.widget.AppCompatTextView
+                                             android:id="@+id/info_custa"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:gravity="center_vertical"
+                                             android:text="Customer Info"
+                                             android:visibility="gone"
+                                             android:textColor="@color/colorlink"
+                                             android:textSize="14sp"
+                                             android:padding="2dp"/>
+
+                                         <androidx.appcompat.widget.AppCompatTextView
+                                             android:id="@+id/RofferButton"
+                                             android:layout_width="wrap_content"
+                                             android:layout_height="wrap_content"
+                                             android:background="@color/yellow"
+                                             android:gravity="center_vertical"
+                                             android:text="R-Offer"
+                                             android:textColor="@color/colorlink"
+                                             android:textSize="14sp"
+                                             android:padding="2dp"/>
+
+                                     </LinearLayout>
+
+                                     <EditText
+                                         android:id="@+id/transactionId"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentLeft="true"
+                                         android:layout_below="@+id/operator"
+                                         android:drawableLeft="@drawable/ic_receipt_icon"
+                                         android:gravity="center_vertical"
+                                         android:hint="Transaction ID"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size"
+                                         android:visibility="gone" />
+
+                                     <EditText
+                                         android:id="@+id/amount"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentLeft="true"
+                                         android:layout_below="@+id/transactionId"
+
+                                         android:drawableLeft="@drawable/ic_amount_icon"
+                                         android:gravity="center_vertical"
+                                         android:hint="Amount"
+                                         android:inputType="number"
+                                         android:maxLength="10"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size" />
+                                     <EditText
+                                         android:id="@+id/remark"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentLeft="true"
+                                         android:layout_below="@+id/amount"
+                                         android:drawableLeft="@drawable/ic_receipt_icon"
+                                         android:gravity="center_vertical"
+                                         android:hint="Remark"
+                                         android:visibility="gone"
+                                         android:inputType="text"
+                                         android:maxLength="200"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size" />
+                                     <EditText
+                                         android:id="@+id/AmountInWords"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentLeft="true"
+                                         android:layout_below="@+id/remark"
+                                         android:drawableLeft="@drawable/rupee"
+                                         android:gravity="center_vertical"
+                                         android:hint="Amount In Words"
+                                         android:visibility="gone"
+                                         android:inputType="text"
+                                         android:maxLength="200"
+                                         android:text=""
+                                         android:textSize="@dimen/edit_text_size" />
+                                     <ImageView
+                                         android:layout_width="wrap_content"
+                                         android:id="@+id/imgView"
+                                         android:visibility="gone"
+                                         android:layout_height="wrap_content"/>
+                                     <TextView
+                                         android:id="@+id/payment_slip"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentLeft="true"
+                                         android:layout_below="@+id/AmountInWords"
+                                         android:visibility="gone"
+                                         android:drawableLeft="@drawable/ic_file_upload_black_24dp"
+                                         android:gravity="center_vertical"
+                                         android:text="Upload Slip"
+                                         />
+
+                                     <TextView
+                                         android:layout_width="wrap_content"
+                                         android:id="@+id/info" android:visibility="gone"
+                                         android:layout_below="@+id/payment_slip"
+                                         android:textColor="@color/red"
+                                         android:layout_toLeftOf="@+id/payButton"
+                                         android:text="Please Inform Customer to switch on\nTV and Set Top Box before Recharge"
+                                         android:layout_height="wrap_content"/>
+                                     <androidx.appcompat.widget.AppCompatButton
+                                         android:id="@+id/payButton"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_alignParentRight="true"
+                                         android:layout_below="@+id/AmountInWords"
+                                         android:background="@color/colorPrimary"
+                                         android:elevation="6dp"
+                                         android:text="Pay"
+                                         android:textColor="#FFFFFF" />
+                                 </RelativeLayout>
+                             </ScrollView>
+
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </ScrollView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_dmr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:elevation="10dp"
+                android:visibility="gone"
+                card_view:cardCornerRadius="10dp">
+
+                <include
+                    android:id="@+id/addBeneficiary"
+                    layout="@layout/add_beneficiary"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/dmrDashboard"
+                    layout="@layout/dmr_dashboard" />
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/optionMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/formContainer"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RelativeLayout
+                    android:id="@+id/rechargeCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/rechargeCategorySelection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/leftselect"
+                        android:scaleType="fitXY" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="Recharges"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dmrCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/dmrCategorySelection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/centerdeselect"
+                        android:scaleType="fitXY" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="DMR"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fundCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/fundCategorySelection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rightdeselect"
+                        android:scaleType="fitXY" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Funds"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rechargesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/category"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:checked="true" />
+
+                                    <ImageView
+                                        android:id="@+id/image1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio1"
+                                        android:background="@drawable/prep_rech" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio2"
+                                        android:background="@drawable/dth_rech" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio13"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image13"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio13"
+                                        android:background="@drawable/dthbooking" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio4"
+                                        android:background="@drawable/electricity" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view113"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout113"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio113"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image113"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio113"
+                                        android:background="@drawable/broadbandrecharge" />
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view41"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout41"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio41"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image41"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio41"
+                                        android:background="@drawable/water" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                            <!--<android.support.v7.widget.CardView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_margin="@dimen/activity_horizontal_margin"-->
+                            <!--android:layout_weight="1"-->
+                            <!--&lt;!&ndash;android:elevation="6dp"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:visibility="invisible"&ndash;&gt;-->
+                            <!--&lt;!&ndash;card_view:cardCornerRadius="4dp">&ndash;&gt;-->
+
+                            <!--</android.support.v7.widget.CardView>-->
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio3"
+                                        android:background="@drawable/landline" />
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view31"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout31"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio31"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image31"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio31"
+                                        android:background="@drawable/gas" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view131"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout131"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio131"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image131"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio131"
+                                        android:background="@drawable/insurance_payment" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view191"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout191"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio191"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image191"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio191"
+                                        android:background="@drawable/giftcard" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout19"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/radio19"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="5dp" />
+
+                                    <ImageView
+                                        android:id="@+id/image19"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_toRightOf="@+id/radio19"
+                                        android:background="@drawable/bbpsoutletreg" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/activity_horizontal_margin"
+                                android:layout_weight="1"
+                                android:elevation="6dp"
+                                android:visibility="visible"
+                                card_view:cardCornerRadius="4dp">
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+                            <!--<android.support.v7.widget.CardView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_margin="@dimen/activity_horizontal_margin"-->
+                            <!--android:layout_weight="1"-->
+                            <!--&lt;!&ndash;android:elevation="6dp"&ndash;&gt;-->
+                            <!--&lt;!&ndash;android:visibility="invisible"&ndash;&gt;-->
+                            <!--&lt;!&ndash;card_view:cardCornerRadius="4dp">&ndash;&gt;-->
+
+                            <!--</android.support.v7.widget.CardView>-->
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+                </ScrollView>
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dmrLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/category"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="gone"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio9"
+                                    android:background="@drawable/create_sender" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="gone"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio10"
+                                    android:background="@drawable/add_beneficiary" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="visible"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio11"
+                                    android:background="@drawable/money_transfer" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="invisible"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio12"
+                                    android:background="@drawable/payment_request" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fundLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/category"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="visible"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio5"
+                                    android:background="@drawable/fund_transfer" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="visible"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio6"
+                                    android:background="@drawable/payment_request" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="gone"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout7"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio7"
+                                    android:background="@drawable/money_transfer" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_view8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:layout_weight="1"
+                            android:elevation="6dp"
+                            android:visibility="visible"
+                            card_view:cardCornerRadius="4dp">
+
+                            <RelativeLayout
+                                android:id="@+id/layout8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/radio8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <ImageView
+                                    android:id="@+id/image8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/radio8"
+                                    android:background="@drawable/payment_request" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+</RelativeLayout>

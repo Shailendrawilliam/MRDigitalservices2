@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="?actionBarSize"
+    android:orientation="vertical">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/row1"
+            android:background="@color/white"
+            android:layout_marginTop="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reports_title"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_more"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"/>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp" android:layout_weight=".25"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/rechargeReport"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/recharge_report"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="@string/recharge_report_title"                            android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight=".25" android:padding="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/specificReport"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/search_report"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="@string/search_complain"                            android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical" android:layout_weight=".25" android:padding="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/disputeReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        android:drawablePadding="5dp"
+                        android:src="@drawable/reportdispute"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="@string/complain_report"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical" android:layout_weight=".25" android:padding="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ledgerReport"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp" android:layout_marginTop="2dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ledger"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="@string/ledger_report"                            android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight=".25"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/fundRecReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/payreqlist"
+                        android:drawablePadding="5dp"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="@string/fund_recieve_report"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight=".25"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/commisionSlab"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/money"
+
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        android:drawablePadding="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:text="@string/comm_slab"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_weight=".25"
+                    android:orientation="vertical" android:padding="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/userDayBook"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/dayfolders"
+
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        android:drawablePadding="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:text="@string/user_day_book"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/fundtransferReportlayout" android:layout_weight=".25"
+                    android:orientation="vertical" android:padding="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/fundtransReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/moneytrfr"
+                        android:drawablePadding="5dp"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="@string/fund_transfer_report"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/row1"
+            android:id="@+id/row2"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rep_datewise"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_more"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"/>
+
+            </RelativeLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_weight=".25"
+                    android:orientation="vertical" android:padding="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/UserSaleReportDetails"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+
+                        android:src="@drawable/list"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        android:drawablePadding="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:gravity="center" android:layout_gravity="center"
+                        android:visibility="visible"
+                        android:text="@string/user_sale_report_datewise"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_weight=".25"
+                    android:orientation="vertical" android:padding="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/FundReceiveStatement"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/funddatewise"
+                        android:drawablePadding="5dp"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif" android:layout_gravity="center"
+                        android:text="@string/datewise_fund_transfer"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight=".25"
+                      android:visibility="invisible"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/UserSaleAllDetailReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/allsale"
+                        android:drawablePadding="5dp"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif" android:layout_gravity="center"
+                        android:text="UserSaleAll&#10;DetailReport"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/row2"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/_7sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/coupon_string"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show More"
+                    android:textSize="@dimen/_11sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple"
+                    android:layout_alignParentRight="true"
+                    android:visibility="invisible"/>
+
+            </RelativeLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_weight=".3"
+                    android:orientation="vertical" android:padding="5dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/GetSaleCoupan"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/coupon"
+
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        android:drawablePadding="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:text="@string/sales_coupon"
+                        android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_weight=".3"
+
+                    android:orientation="vertical" android:padding="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/OfferSheet"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/sr"
+                        android:drawablePadding="5dp"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:textAllCaps="false"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif"
+                        android:text="@string/offer_sheet" android:layout_gravity="center"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content" android:layout_weight=".3"
+                    android:orientation="vertical" android:padding="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/notice_view"
+                        android:layout_width="60dp"
+                        android:layout_height="66dp"
+                        android:layout_gravity="center"
+                        android:drawablePadding="5dp"
+                        android:padding="5dp"
+                        android:src="@drawable/bell"
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:padding="5dp" android:gravity="center"
+                        android:visibility="visible"
+                        android:textStyle="bold"
+                        android:fontFamily="serif" android:layout_gravity="center"
+                        android:text="@string/recharge_offer"
+                        android:textAllCaps="false"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:alpha="0.9" android:visibility="gone"
+            android:backgroundTint="@color/colorBackground"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>

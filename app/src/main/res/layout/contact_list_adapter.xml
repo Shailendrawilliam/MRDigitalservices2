@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="3dp">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:id="@+id/opImage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/profiledefault" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/opImage"
+            android:layout_alignTop="@+id/opImage"
+            android:layout_toRightOf="@+id/opImage"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Lalit Mohsn joshsojjsbkhsbdksnldksdjksgdjshkdnskdnslkdnmslkdnskdmnskl;dnsklbdsld "
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="09935857607"
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/opImage"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorBackground" />
+    </RelativeLayout>
+</RelativeLayout>

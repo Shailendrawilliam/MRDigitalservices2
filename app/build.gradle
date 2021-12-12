@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+
+}
+
+android {
+   /* signingConfigs {
+        config {
+            keyAlias 'mrmulti'
+            keyPassword 'mrmulti'
+            storeFile file('E:\mmm\freel\Demo1\Demo1\app\mrmulti.jks')
+            storePassword 'mrmulti'
+        }
+    }*/
+    compileSdkVersion 29
+    //   buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId "com.mrmulti"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 2
+        versionName "1.1"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+     //   signingConfig signingConfigs.config
+        useLibrary 'org.apache.http.legacy'
+        resConfigs "en", "hi", "kn"
+
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+           // signingConfig signingConfigs.config
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    implementation('com.razorpay:checkout:1.6.3')
+    implementation 'com.github.bumptech.glide:glide:4.0.0'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    //implementation 'com.github.psinetron:slycalendarview:0.0.9'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.commit451:PhotoView:1.2.4'
+    implementation 'com.google.code.gson:gson:2.2.+'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:retrofit-adapters:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+  //  implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+//  implementation 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.razorpay:razorpay-java:1.3.8'
+
+
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.github.f0ris.sweetalert:library:1.5.3'
+    implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    implementation 'com.github.Q42:AndroidScrollingImageView:1.2'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+    implementation 'com.github.rampo.updatechecker:library:2.1.8'
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'org.jsoup:jsoup:1.10.2'
+    //   implementation 'com.akexorcist:localization:1.2.4'
+    implementation('org.egram.aepslib:mahagram-sdk@aar') {
+        transitive = false;
+    }
+
+
+    implementation('com.paytm:pgplussdk:1.3.3') {
+        transitive = true;
+    }
+//firebase   n playstore crendtials    svballinonerecharge@gmail.com  
+//app crendtials 0000001111  1234
+
+}
